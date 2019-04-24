@@ -1,0 +1,2 @@
+class MovieGroupsController < ApplicationController
+end
