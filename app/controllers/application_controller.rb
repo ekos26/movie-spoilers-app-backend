@@ -16,7 +16,9 @@ class ApplicationController < ActionController::API
     end
   end
 
+
   def curr_user
+
     begin
       user_id = decoded_token[0]["user_id"]
 
