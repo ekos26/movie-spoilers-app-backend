@@ -3,4 +3,5 @@ class GroupSerializer < ActiveModel::Serializer
 
   has_many :movies
   has_many :users
+  has_many :comments
 end
