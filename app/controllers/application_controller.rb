@@ -16,7 +16,6 @@ class ApplicationController < ActionController::API
     end
   end
 
-
   def curr_user
 
     begin

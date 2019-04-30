@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/auto_login', to: 'auth#auto_login'
 
-
   post '/users', to: 'users#create'
+
+  post '/api/movies', to: 'movies#fetch_movie'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
