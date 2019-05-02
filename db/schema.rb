@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_222456) do
+ActiveRecord::Schema.define(version: 2019_05_01_185723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2019_04_24_222456) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
-    t.bigint "group_id"
+    t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_comments_on_group_id"
+    t.index ["movie_id"], name: "index_comments_on_movie_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_222456) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "groups"
+  add_foreign_key "comments", "groups", column: "movie_id"
   add_foreign_key "comments", "users"
   add_foreign_key "movie_groups", "groups"
   add_foreign_key "movie_groups", "movies"

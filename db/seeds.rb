@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(username: "ekos", password_digest: "1234", fullname: "Elizabeth Kosowski")
 user2 = User.create(username: "mkos", password_digest: "1234", fullname: "Melody Kosowski")
 
@@ -22,10 +15,10 @@ user_group3 = UserGroup.create(user_id: user1.id, group_id: group3.id)
 user_group4 = UserGroup.create(user_id: user2.id, group_id: group1.id)
 user_group5 = UserGroup.create(user_id: user2.id, group_id: group2.id)
 
-comment1 = Comment.create(content: "As you wish.", user_id: user1.id, group_id: group1.id)
-comment2 = Comment.create(content: "They end up together at the end.", user_id: user1.id, group_id: group2.id)
-comment3 = Comment.create(content: "Rosebud is the brand of the sled.", user_id: user1.id, group_id: group3.id)
-comment4 = Comment.create(content: "Buttercup and Wesley end up together in the end.", user_id: user2.id, group_id: group1.id)
+comment1 = Comment.create(content: "As you wish.", user_id: user1.id, movie_id: movie1.id)
+comment2 = Comment.create(content: "They end up together at the end.", user_id: user1.id, movie_id: movie2.id)
+comment3 = Comment.create(content: "Rosebud is the brand of the sled.", user_id: user1.id, movie_id: movie3.id)
+comment4 = Comment.create(content: "Buttercup and Wesley end up together in the end.", user_id: user2.id, movie_id: movie1.id)
 
 movie_group1 = MovieGroup.create(movie_id: movie1.id, group_id: group1.id)
 movie_group2 = MovieGroup.create(movie_id: movie2.id, group_id: group2.id)
