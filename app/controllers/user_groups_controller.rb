@@ -6,8 +6,13 @@ class UserGroupsController < ApplicationController
   end
 
   def create
-    @user_group = UserGroup.create(user_groups_params)
-    render json: @user_group
+    do_you_exist = UserGroup.find_by(user_groups_params)
+    if do_you_exist
+      render json: {errors: 'You cannot join a group you are already in!'}
+    else
+      @user_group = UserGroup.create(user_groups_params)
+      render json: @user_group.group
+    end
   end
 
   private

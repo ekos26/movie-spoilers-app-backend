@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
     # byebug
     title = params[:title]
     key = ENV['API_KEY']
-    response = HTTP.get("http://www.omdbapi.com/?apikey=#{key}&s=#{title}").to_s
+    response = HTTP.get("http://www.omdbapi.com/?apikey=#{key}&t=#{title}").to_s
     parsed_response = JSON.parse(response)
     render json: parsed_response
     # parsed_response["#{param}"]
