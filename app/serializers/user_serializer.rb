@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :groups
   has_many :comments
+  has_many :user_groups
 end
